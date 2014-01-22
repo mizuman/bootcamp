@@ -33,7 +33,7 @@ $(document).ready(function(){
 				document.location = "./main.html";
 			},
 			error: function(result_user, error) {
-				alert("error");
+				alert("error" + error.message);
 			}
 		});
 	}
