@@ -9,6 +9,9 @@ body {
   padding: 15px;
   margin: 0 auto;
 }
+.form-signin img {
+  margin-bottom: 5px;
+}
 .form-signin .btn {
   width: 49%;
 }
