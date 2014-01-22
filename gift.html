@@ -25,12 +25,12 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="./main.html">Home</a></li>
+					<li><a href="./main.html">Home</a></li>
 					<li><a href="./notification.html">Notification</a></li>
 					<li><a href="./profile.html">Profile</a></li>
 					<li><a href="./activity.html">Activity</a></li>
 					<li><a href="./search.html">Search</a></li>
-					<li><a href="./gift.html">Gift</a></li>
+					<li class="active"><a href="./gift.html">Gift</a></li>
 					<li><a href="./setting.html">Setting</a></li>
 					<li><a href="./index.html" onclick="Parse.User.logOut();">Logout</a></li>
 				</ul>
@@ -38,33 +38,19 @@
 	 	</div>
 	</div>
 
-	<div class="container" id="chart" style="height: 300px;">
-	<!-- 	グラフの描画
-		描画部分は./js/drawChart.js参照 -->
+	<div class="container">
+		<p>とりあえず</p>
 	</div>
 
-	<div class="container" id="ranking">
-	<!-- 	ランキングの描画
-		描画部分は./js/showRanking.js参照 -->
-      <table class='table table-striped'>
-        <thead>
-          <tr>
-            <th class='span3'>image</th>
-            <th class='span3'>user</th>
-            <th class='span3'>title</th>
-            <th>comment</th>
-          </tr>
-        </thead>
-        <tbody></tbody>
-      </table>
+	<div class="container" id="userinfo">
+		<h2>Gift</h2>
 	</div>
+
 
 
 	<script type="text/javascript" src="./js/jquery-2.0.3.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
 	<script type="text/javascript" src="./js/user.js"></script>
-	<script type="text/javascript" src="./js/drawChart.js"></script>
-	<script type="text/javascript" src="./js/showRanking.js"></script>
 </body>
 </html>

@@ -1,6 +1,8 @@
 var APP_ID = "8t6z62bZoj8sPiSsDgWU1yPpdeq3Oe2ffkMYhsGB";
 var JS_KEY = "h8x0AfNvjDAKRQSvVKygIiVdp4DDKQkkqm4bnGK1";
 
+var test_login;
+
 $(document).ready(function(){
 	Parse.initialize(APP_ID, JS_KEY);
 
@@ -36,6 +38,23 @@ $(document).ready(function(){
 				alert("error" + error.message);
 			}
 		});
+	}
+
+	test_login = function(){
+		var username = "test";
+		var password = "test";
+
+		Parse.User.logIn(username,password,{
+			success: function(result_user) {
+				// changeView('service');
+				console.log(result_user);
+				// showPic();
+				document.location = "./main.html";
+			},
+			error: function(result_user, error) {
+				alert("error" + error.message);
+			}
+		});		
 	}
 
 	var userLogout = function(){
