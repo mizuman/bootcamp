@@ -13,7 +13,7 @@ $(document).ready(function(){
 		signup_user.signUp(null, {
 			success: function(result_user){
 				// changeView('service');
-				document.location = "./../main.html";
+				document.location = "./main.html";
 			},
 			error: function(result_user, error){
 				alert("error" + error.message);
@@ -40,7 +40,7 @@ $(document).ready(function(){
 
 	var userLogout = function(){
 		Parse.User.logOut();
-		changeView('user-verify');
+		document.location = "./index.html";
 	}
 
 	$("#signup").on("click", function(){
@@ -50,4 +50,8 @@ $(document).ready(function(){
 	$("#login").on("click", function(){
 		userLogin();
 	})
+
+	$("#logout").on("click", function(){
+		userLogout();
+	})	
 })
