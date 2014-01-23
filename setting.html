@@ -42,20 +42,33 @@
 		<p>とりあえず、データ入力用（調整中）</p>
 	</div>
 
-	<div class="container" id="userinfo">
-		<h2>User Info</h2>
-		<span id="user-name">username</span>
-		<input type="button" id="logout" value="Log out">
-		<div id="main">
-			<h3>Uploads</h3>
-			<!-- Please select an image file<br> -->
-			<input type="file" id="FileUpload"/><br>
-			<input type="text" class="form-control" id="Position" placeholder="役職"><br>
-			<input type="text" class="form-control" id="TotalPoint" placeholder="累積ポイント"><br>
-			<input type="button" class="btn" id="submit" value="submit" /><br>
+	<div class="container">
+		<p>UserInfo</p>
+		<div class="media">
+			<a class="pull-left" href="#">
+				<img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="http://dummyimage.com/64x64/579ce6/ffffff.png&text=写真">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading"></h4>
+			</div>
 		</div>
 	</div>
 
+	<div class="container" id="userinfo">
+		<h2>Edit User Profile</h2>
+		<div>
+			<!-- Please select an image file<br> -->
+			<input type="file" id="FileUpload"/><br>
+			<input type="text" class="form-control" id="Biography" placeholder="自己紹介"><br>
+			<input type="button" class="btn" id="submit" value="submit"></br>
+		</div>
+	</div>
+
+
+	<div class="container">
+		<h3>Logout</h3>
+		<input type="button" id="logout" value="Log out">
+	</div>
 
 
 	<script type="text/javascript" src="./js/jquery-2.0.3.js"></script>
@@ -63,5 +76,6 @@
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
 	<script type="text/javascript" src="./js/user.js"></script>
 	<script type="text/javascript" src="./js/setting.js"></script>
+	<script type="text/javascript" src="./js/userinfo.js"></script>
 </body>
 </html>
