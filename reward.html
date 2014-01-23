@@ -29,7 +29,7 @@
 					<li><a href="./profile.html">Profile</a></li>
 					<li><a href="./activity.html">Activity</a></li>
 					<li><a href="./map.html">Map</a></li>
-					<li class="active"><a href="./gift.html">Gift</a></li>
+					<li class="active"><a href="./reward.html">Reward</a></li>
 					<li><a href="./search.html">Search</a></li>
 					<li><a href="./setting.html">Setting</a></li>
 					<li><a href="./index.html" onclick="Parse.User.logOut();">Logout</a></li>
@@ -38,20 +38,16 @@
 	 	</div>
 	</div>
 
-	<div class="container">
-		<p>とりあえず</p>
-	</div>
-	<div class="container" id="gift-list">
+	<div class="container" id="reward-list">
 	<!-- 	ギフトリストの描画
-		描画部分は./js/gift.js参照 -->
+		描画部分は./js/reward.js参照 -->
       <table class='table table-striped'>
         <thead>
           <tr>
           	<th class='span1'>#</th>
-            <th class='span5'>ギフト名</th>
-            <th class='span2'>ポイント</th>
-            <th class='span2'></th>
-            <th>comment</th>
+            <th class='span9'>ギフト名</th>
+            <th class='span1'>ポイント</th>
+            <th class='span1'></th>
           </tr>
         </thead>
         <tbody></tbody>
@@ -64,6 +60,6 @@
 	<script type="text/javascript" src="./js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
 	<script type="text/javascript" src="./js/user.js"></script>
-	<script type="text/javascript" src="./js/gift.js"></script>
+	<script type="text/javascript" src="./js/reward.js"></script>
 </body>
 </html>
