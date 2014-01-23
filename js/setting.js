@@ -19,23 +19,64 @@ var create_post = function(upload_url){
 	var Post = Parse.Object.extend("Post");
 	var myPost = new Post();
 
-	var position = $("#Position").val();
-	var totalpoint = $("#TotalPoint").val();
+	var biography = $("#Biography").val();
 	var user = Parse.User.current().get("username");
 
-	myPost.set("Position",position);
+	myPost.set("Biography",biography);
 	myPost.set("URL",upload_url);
-	myPost.set("TotalPoint",totalpoint);
 	myPost.set("User",user);
 
 	myPost.save(null,{
 		success: function(){
 			// showPic();
+			getUserInfo();
 			alert("photo upload is success");
 		}
 	});
 }
 
+var getUserInfo = function(){
+	var query = new Parse.Query("Post");
+	var user = Parse.User.current().get("username");
+
+	query.equalTo("User", user);
+	query.ascending("updatedAt");
+	query.find({
+		success:function(results){
+			// console.log(results);
+			showUserInfo(results);
+		}
+	});
+}
+
+var showUserInfo = function(results){
+		var entry = results[results.length-1];
+
+		console.log(entry);
+
+		var biography = entry.get("Biography");
+		var image = entry.get("URL");
+		var user = entry.get("User");
+
+		// var item = '<tr><th><img src="' + image + '"></th><th>' + user + '</th><th>' + title + '</th><th>' + comment + '</th></tr>';
+		// $("tbody").append(item);
+		// console.log(biography);
+
+		var item = '<a class="pull-left" href="#"><img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="' + image + '"></a><div class="media-body"><h4 class="media-heading">' + user + '</h4>' + biography + '</div>';
+
+		$(".media").html(item);
+	
+}
+
+// $(document).ready(function(){
+// 	$("#user-name").html("username : " + Parse.User.current().get("username"));
+// })
+
+$("#submit").on("click", function(){
+	upload_file();
+})
+
 $(document).ready(function(){
-	$("#user-name").html("username : " + Parse.User.current().get("username"));
+	$("h4.media-heading").text(Parse.User.current().get("username"));
+	getUserInfo();
 })
