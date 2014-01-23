@@ -16,29 +16,29 @@ $(document).ready(function() {
                 gridLineWidth: 0,
                 title: {
                     text: '回数',
-                    style: { color: '#4572A7' } },
+                    style: { color: '#000001' } },
                 labels: {
-                    formatter: function() { return this.value +' mm'; },
-                    style: { color: '#4572A7' } }
+                    formatter: function() { return this.value +' Thanks!'; },
+                    style: { color: '#000001' } }
             },
             { //Y軸 No.3
                 gridLineWidth: 0,
                 title: {
                     text: '合計',
-                    style: { color: '#AA4643' } },
+                    style: { color: '#000001' } },
                 labels: {
-                    formatter: function() { return this.value +' mb'; },
-                    style: { color: '#AA4643' } },
+                    formatter: function() { return this.value +' Thanks!'; },
+                    style: { color: '#000001' } },
                 opposite: true
             }
         ],
         tooltip: {
             formatter: function() {
                 var unit = {
-                    '降水量1': 'mm',
-                    '降水量2': 'mm',
-                    '降水量3あああ': 'mm',
-                    '気温あ': '°C'
+                    'ありがとうした回数': '回',
+                    'ありがとうされた回数': '回',
+                    'ありがとうした合計': '回',
+                    'ありがとうされた合計': '回'
                 }[this.series.name];
                 return ''+ this.x +': '+ this.y +' '+ unit;
             }
@@ -53,18 +53,18 @@ $(document).ready(function() {
             verticalAlign: 'top',
             y: 80,
             floating: true,
-            backgroundColor: '#FFFFFF'
+            backgroundColor: '#FFE4E1'
         },
         series: [
             {name: 'ありがとうした回数',
-             color: '#4572A7',
+             color: '#FF8300',
              type: 'column',
              yAxis: 0,
              data: [15, 4, 22, 10, 8, 7, 10],
              stack: 'group1'
             },
             {name: 'ありがとうされた回数',
-             color: '#AA4643',
+             color: '#FF0019',
              type: 'column',
              yAxis: 0,
              data: [10, 15, 6, 8, 12, 14, 3],
@@ -72,7 +72,7 @@ $(document).ready(function() {
             },
             {name: 'ありがとうした合計',
              type: 'spline',
-             color: '#4572A7',
+             color: '#FF8300',
              yAxis: 1,
              data: [15, 19, 41, 51, 59, 66, 76],
              marker: { enabled: false },
@@ -80,7 +80,7 @@ $(document).ready(function() {
             },
             {name: 'ありがとうされた合計',
              type: 'spline',
-             color: '#AA4643',
+             color: '#FF0019',
              yAxis: 1,
              data: [10, 25, 31, 39, 51, 65, 68],
              marker: { enabled: false },
