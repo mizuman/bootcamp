@@ -62,6 +62,20 @@ $(document).ready(function(){
 		document.location = "./index.html";
 	}
 
+//comment:uidがdb上でユニークであること
+	var searchUser= function(uid){
+	     var query = new Parse.Query(Parse.User);
+	     query.equalTo("username", uid);
+	     query.find({
+	       success: function(searched_user) {
+		 $("div#search_results").append(searched_user[0].get("username"));
+	       }
+	     });
+	}
+
+
+	
+
 	$("#signup").on("click", function(){
 		userSignup();
 	})
@@ -73,5 +87,12 @@ $(document).ready(function(){
 	$("#logout").on("click", function(){
 		userLogout();
 	})	
+
+	$("#search_user" ).keypress(function(e) {
+	  if(e.which == 13){ // if enter is pressed
+	    var uid = $("#search_user").val();
+	    searchUser(uid);
+	  }
+	});
 
 })
