@@ -41,9 +41,21 @@
 	<div class="container">
 		<p>とりあえず</p>
 	</div>
-
-	<div class="container" id="userinfo">
-		<h2>Gift</h2>
+	<div class="container" id="gift-list">
+	<!-- 	ギフトリストの描画
+		描画部分は./js/gift.js参照 -->
+      <table class='table table-striped'>
+        <thead>
+          <tr>
+          	<th class='span1'>#</th>
+            <th class='span5'>ギフト名</th>
+            <th class='span2'>ポイント</th>
+            <th class='span2'></th>
+            <th>comment</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
 	</div>
 
 
@@ -52,5 +64,6 @@
 	<script type="text/javascript" src="./js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
 	<script type="text/javascript" src="./js/user.js"></script>
+	<script type="text/javascript" src="./js/gift.js"></script>
 </body>
 </html>
