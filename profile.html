@@ -27,9 +27,10 @@
 				<ul class="nav navbar-nav">
 					<li><a href="./main.html">Home</a></li>
 					<li><a href="./notification.html">Notification</a></li>
-					<li><a href="./profile.html">Profile</a></li>
-					<li class="active"><a href="./activity.html">Activity</a></li>
+					<li class="active"><a href="./profile.html">Profile</a></li>
+					<li><a href="./activity.html">Activity</a></li>
 					<li><a href="./search.html">Search</a></li>
+					<li><a href="./map.html">Map</a></li>
 					<li><a href="./gift.html">Gift</a></li>
 					<li><a href="./setting.html">Setting</a></li>
 					<li><a href="./index.html" onclick="Parse.User.logOut();">Logout</a></li>
@@ -39,7 +40,19 @@
 	</div>
 
 	<div class="container">
-		<p>とりあえず</p>
+		<div class="media">
+			<a class="pull-left" href="#">
+				<img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="./img/NoImg.png">
+			</a>
+			<div class="media-body">
+				<h4 class="media-heading"></h4>
+			</div>
+		</div>
+	</div>
+
+	<div class="container" id="chart" style="height: 300px;">
+	<!-- 	グラフの描画
+		描画部分は./js/drawChart.js参照 -->
 	</div>
 
 	<div class="container" id="userinfo">
@@ -52,5 +65,8 @@
 	<script type="text/javascript" src="./js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
 	<script type="text/javascript" src="./js/user.js"></script>
+	<script type="text/javascript" src="./js/drawChart.js"></script>
+	<script type="text/javascript" src="./js/setting.js"></script>
+
 </body>
 </html>

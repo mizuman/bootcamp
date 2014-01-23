@@ -30,9 +30,9 @@
 					<li><a href="./profile.html">Profile</a></li>
 					<li><a href="./activity.html">Activity</a></li>
 					<li><a href="./search.html">Search</a></li>
-					<li><a href="./map.html">Map</a></li>
+					<li class="active"><a href="./map.html">Map</a></li>
 					<li><a href="./gift.html">Gift</a></li>
-					<li class="active"><a href="./setting.html">Setting</a></li>
+					<li><a href="./setting.html">Setting</a></li>
 					<li><a href="./index.html" onclick="Parse.User.logOut();">Logout</a></li>
 				</ul>
 			</div><!--/.nav-collapse -->
@@ -40,43 +40,18 @@
 	</div>
 
 	<div class="container">
-		<p>とりあえず、データ入力用（調整中）</p>
-	</div>
-
-	<div class="container">
-		<p>UserInfo</p>
-		<div class="media">
-			<a class="pull-left" href="#">
-				<img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="./img/NoImg.png">
-			</a>
-			<div class="media-body">
-				<h4 class="media-heading"></h4>
-			</div>
-		</div>
+		<p>とりあえず</p>
 	</div>
 
 	<div class="container" id="userinfo">
-		<h2>Edit User Profile</h2>
-		<div>
-			<!-- Please select an image file<br> -->
-			<input type="file" id="FileUpload"/><br>
-			<input type="text" class="form-control" id="Biography" placeholder="自己紹介"><br>
-			<input type="button" class="btn" id="submit" value="submit"></br>
-		</div>
+		<h2>map</h2>
 	</div>
 
-
-	<div class="container">
-		<h3>Logout</h3>
-		<input type="button" id="logout" value="Log out">
-	</div>
 
 
 	<script type="text/javascript" src="./js/jquery-2.0.3.js"></script>
 	<script type="text/javascript" src="./js/bootstrap.js"></script>
 	<script type="text/javascript" src="http://www.parsecdn.com/js/parse-1.2.15.min.js"></script>
 	<script type="text/javascript" src="./js/user.js"></script>
-	<script type="text/javascript" src="./js/setting.js"></script>
-	<script type="text/javascript" src="./js/userinfo.js"></script>
 </body>
 </html>
