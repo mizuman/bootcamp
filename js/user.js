@@ -14,6 +14,22 @@ $(document).ready(function(){
 
 		signup_user.signUp(null, {
 			success: function(result_user){
+				//mysql
+				//var post_data = $F('text');
+				$.ajax({
+        			type: "POST",
+        			url: "./php/insert.php",
+        			data: 'data1=$("#username").val()&data2=$("#password").val()',
+        			success: function() {
+                		alert('success');
+        			}
+				}
+				/*new Ajax.Request("../php/insert.php",{
+					method: 'regist',
+					parameters: 'username=' + post_username,
+					onComplete: window.alert("Your request was acccepted")
+				});*/
+				
 				// changeView('service');
 				document.location = "./main.html";
 			},
