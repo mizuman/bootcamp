@@ -52,7 +52,7 @@
 		<h2>Search</h2>
 <?php
 if($_POST['search']) {
-  $con = mysql_connect('153.149.5.92', 'thanks', 'thanksthanks');
+  $con = mysql_connect("localhost", "thanks", "thanksthanks");
   if (!$con) {
     exit('データベースに接続できませんでした。');
   }
@@ -62,9 +62,11 @@ if($_POST['search']) {
     exit('データベースを選択できませんでした。');
   }
 
-  $result = mysql_query('SELECT * FROM user WHERE name="'. $_POST['uid'] . '"', $con);
+  $query = 'SELECT * FROM user WHERE name="'. $_POST['uid'] . '"';
+
+  $result = mysql_query($query, $con);
   while ($data = mysql_fetch_array($result)) {
-    echo '<p>' . 'userid'. ':' .$data['name'] .  '    thanks数' . ':' .$data['sum_p'] . "</p>\n";
+    echo '<p>' . 'userid'. ':' .$data['name'] .  '    総thanks数' . ':' .$data['sum_p'] . "</p>\n";
   }
 
   $con = mysql_close($con);
