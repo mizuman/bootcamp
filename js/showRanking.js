@@ -1,12 +1,3 @@
-function ohayou() {
-    //window.alert("Hello!");
-    //makeHtml();
-    makeData();
-}
-// とりあえず、画像を表示
-// 
-
-
 
 
 var showRanking = function(){
@@ -53,32 +44,16 @@ var showRanking = function(){
 
 
 
-
-function makeData(){
-//function makeData(results){
+var makeData = function(){
+//function makeData(){
 
 	var username = "akiko";
 
-	var ary0 = [92, 88, 64, 100];
-	var ary1 = [78, 92, 96, 75];
-	var ary2 = [68, 56, 84, 50];
-	var ary3 = [92, 88, 64, 25];
-	var ary4 = [78, 92, 96, 0];
-
-/*
-	var ary0 = ["92", Ayako, Akita, "100"];
-	var ary1 = ["78", Sayako, Iwate, "75"];
-	var ary2 = ["68", Tomoko, Tokyo, "50"];
-	var ary3 = ["92", Machiko, Kyoto, "25"];
-	var ary4 = ["78", Mutsuko, Saga, "0"];
-
-	var ary = new Array(5);
-	ary[0] = ["92", Ayako, Akita, "100"];
-	ary[1] = ["78", Sayako, Iwate, "75"];
-	ary[2] = ["68", Tomoko, Tokyo, "50"];
-	ary[3] = ["92", Machiko, Kyoto, "25"];
-	ary[4] = ["78", Mutsuko, Saga, "0"];
-
+	var ary0 = ['92', 'Ayako', 'Akita', '100'];
+	var ary1 = ['78', 'Sayako', 'Iwate', '75'];
+	var ary2 = ['68', 'Tomoko', 'Tokyo', '50'];
+	var ary3 = ['92', 'Machiko', 'Kyoto', '25'];
+	var ary4 = ['78', 'Mutsuko', 'Saga', '0'];
 
 /*
 	for(var i=0; i < results.length; i++){
@@ -98,8 +73,8 @@ function makeData(){
 
 
 
-//var makeHtml = function(results){
-function makeHtml(results){
+var makeHtml = function(results){
+//function makeHtml(results){
 	// $("#display").append("hoge");
 
 	//for(var i=0; i < 5; i++){
@@ -131,5 +106,7 @@ document.f.submit();
 
 
 $(document).ready(function(){
-	showRanking();
+	//window.alert("Hello!");
+	makeData();
+	//showRanking();
 })
