@@ -68,7 +68,9 @@ $(document).ready(function(){
 	     query.equalTo("username", uid);
 	     query.find({
 	       success: function(searched_user) {
-		 $("div#search_results").append(searched_user[0].get("username"));
+	       	var item = '<li class="list-group-item">' + searched_user[0].get("username") + '</li>';
+		 $("div#search_results").append(item);
+		 $("#search_user").val('');
 	       }
 	     });
 	}
