@@ -3,6 +3,13 @@ var JS_KEY = "h8x0AfNvjDAKRQSvVKygIiVdp4DDKQkkqm4bnGK1";
 
 var test_login;
 
+var errorNotice = function(message){
+	var item = '<div class="alert alert-warning fade in"><button type="button" class="close" data-dismiss="alert" aria-hidden="true">x</button>' + message + '</div>';
+	// var item = 'hoge';
+	// var item = '<div>hogehoge</div>';
+	$("#notice").html(item);
+}
+
 $(document).ready(function(){
 	Parse.initialize(APP_ID, JS_KEY);
 
@@ -14,11 +21,10 @@ $(document).ready(function(){
 
 		signup_user.signUp(null, {
 			success: function(result_user){
-				// changeView('service');
 				document.location = "./main.html";
 			},
 			error: function(result_user, error){
-				alert("error" + error.message);
+				errorNotice(error.message);
 			}
 		});
 	}
@@ -29,13 +35,11 @@ $(document).ready(function(){
 
 		Parse.User.logIn(username,password,{
 			success: function(result_user) {
-				// changeView('service');
 				console.log(result_user);
-				// showPic();
 				document.location = "./main.html";
 			},
 			error: function(result_user, error) {
-				alert("error" + error.message);
+				errorNotice(error.message);
 			}
 		});
 	}
@@ -46,13 +50,10 @@ $(document).ready(function(){
 
 		Parse.User.logIn(username,password,{
 			success: function(result_user) {
-				// changeView('service');
-				console.log(result_user);
-				// showPic();
 				document.location = "./main.html";
 			},
 			error: function(result_user, error) {
-				alert("error" + error.message);
+				errorNotice(error.message);
 			}
 		});		
 	}
