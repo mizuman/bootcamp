@@ -1,5 +1,12 @@
 var drawMap = function() {
-	$("#map").html('<img src="./img/T-Map.png" width="400">');
+
+	navWidth = $(".navbar").width();
+
+	if(navWidth>400){
+		$("#map").html('<img src="./img/T-Map_512x512.png">');
+	}else{
+		$("#map").html('<img src="./img/T-Map_512x512.png" width="' + navWidth + '">');
+	}
 }
 
 
