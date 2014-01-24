@@ -44,9 +44,6 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
-tr, td{
-	border: 1px #0C0C0C solid;
-}
 #test_login {
   margin-top: 20%;
 }
