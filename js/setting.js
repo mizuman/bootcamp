@@ -44,27 +44,21 @@ var getUserInfo = function(){
 	query.find({
 		success:function(results){
 			// console.log(results);
-			showUserInfo(results);
+			if(results!=0) showUserInfo(results);
 		}
 	});
 }
 
 var showUserInfo = function(results){
-		var entry = results[results.length-1];
 
-		console.log(entry);
+	var entry = results[results.length-1];
+	var biography = entry.get("Biography");
+	var image = entry.get("URL");
+	var user = entry.get("User");
 
-		var biography = entry.get("Biography");
-		var image = entry.get("URL");
-		var user = entry.get("User");
+	var item = '<a class="pull-left" href="#"><img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="' + image + '"></a><div class="media-body"><h4 class="media-heading">' + user + '</h4>' + biography + '</div>';
 
-		// var item = '<tr><th><img src="' + image + '"></th><th>' + user + '</th><th>' + title + '</th><th>' + comment + '</th></tr>';
-		// $("tbody").append(item);
-		// console.log(biography);
-
-		var item = '<a class="pull-left" href="#"><img class="media-object" data-src="holder.js/64x64" alt="64x64" style="width: 64px; height: 64px;" src="' + image + '"></a><div class="media-body"><h4 class="media-heading">' + user + '</h4>' + biography + '</div>';
-
-		$(".media").html(item);
+	$(".media").html(item);	
 	
 }
 
