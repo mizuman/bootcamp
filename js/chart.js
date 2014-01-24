@@ -9,26 +9,31 @@ $(document).ready(function() {
         title: { text: 'あなたのステータス' },
         subtitle: { text: '週間Thanks状況' },
         xAxis: [{
-            categories: ['日', '月', '火', '水', '木', '金', '土']
+            categories: ['1/18(土)', '1/19(日)', '1/20(月)', '1/21(火)', '1/22(水)', '1/23(木)', '1/24(金)'],
+            labels: {style: {fontSize: '12px'}}
         }],
         yAxis: [
             { //Y軸 No.2
-                gridLineWidth: 0,
+                gridLineWidth: 1,
+                lineWidth: 1,
                 title: {
                     text: '回数',
-                    style: { color: '#000001' } },
+                    rotation: 0,
+                    style: { color: '#000001', fontSize: '12px' } },
                 labels: {
                     formatter: function() { return this.value +' Thanks!'; },
-                    style: { color: '#000001' } }
+                    style: { color: '#000001', fontSize: '12px' } }
             },
             { //Y軸 No.3
-                gridLineWidth: 0,
+                gridLineWidth: 1,
+                lineWidth: 1,
                 title: {
                     text: '合計',
-                    style: { color: '#000001' } },
+                    rotation: 0,
+                    style: { color: '#000001', fontSize: '12px'} },
                 labels: {
                     formatter: function() { return this.value +' Thanks!'; },
-                    style: { color: '#000001' } },
+                    style: { color: '#000001', fontSize: '12px' } },
                 opposite: true
             }
         ],
@@ -60,7 +65,7 @@ $(document).ready(function() {
              color: '#FF8300',
              type: 'column',
              yAxis: 0,
-             data: [15, 4, 22, 10, 8, 7, 10],
+             data: [15, 4, 22, 10, 8, 20, 10],
              stack: 'group1'
             },
             {name: 'ありがとうされた回数',
@@ -74,7 +79,7 @@ $(document).ready(function() {
              type: 'spline',
              color: '#FF8300',
              yAxis: 1,
-             data: [15, 19, 41, 51, 59, 66, 76],
+             data: [15, 19, 41, 51, 59, 76, 86],
              marker: { enabled: false },
              dashStyle: 'shortdot'                  
             },
