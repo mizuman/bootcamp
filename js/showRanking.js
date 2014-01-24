@@ -1,5 +1,12 @@
 
+<<<<<<< Updated upstream
 
+=======
+// とりあえず、画像を表示
+// 
+
+/*
+>>>>>>> Stashed changes
 var showRanking = function(){
 
 	//var user = Parse.User.current().get("username");
@@ -34,21 +41,55 @@ var showRanking = function(){
 	var query = connection.query(sql);
 
 
+<<<<<<< Updated upstream
 	query.find({
 		success:function(results){
 			//makeHtml(results);
 			makeData(results);
 		}
 	});	
+=======
+	//query.find({
+	//	success:function(results){
+	//		//makeHtml(results);
+	//		makeData(results);
+	//	}
+	//});
+
+	//エラー用
+	query.on('error', function(err) {
+    	console.log('err is: ', err );
+	})
+
+	//結果用
+	query.on('result', function(rows) {
+    	console.log('The res is: ', rows );
+    	makeData(rows);
+	})
+
+	//終了用
+	query.on('end', function() {
+    	console.log('end');
+    connection.destroy();
+	});
+		
+>>>>>>> Stashed changes
 }
+*/
 
 
 
 var makeData = function(){
 //function makeData(){
+<<<<<<< Updated upstream
+=======
+	//var username = Parse.User.current().get("username");
+	var username = "Keiko";
+>>>>>>> Stashed changes
 
 	var username = "akiko";
 
+<<<<<<< Updated upstream
 	var ary0 = ['92', 'Ayako', 'Akita', '100'];
 	var ary1 = ['78', 'Sayako', 'Iwate', '75'];
 	var ary2 = ['68', 'Tomoko', 'Tokyo', '50'];
@@ -67,6 +108,33 @@ var makeData = function(){
 	}
 */
 	var ary = [ary0, ary1, ary2, ary3, ary4];
+=======
+	var ary_temp = [ary0, ary1, ary2, ary3, ary4];
+
+	var ary = [];
+
+/*
+	if(results.length < 5){
+		for(var i=0; i < results.length; i++){
+			ary[ary.length] = results[i];
+		}
+	}
+	else {
+		for(var i=0; i < results.length; i++){
+			if(results[i].get("name") = username){
+				if()
+				ary[ary.length] = results[i-2];
+				ary[ary.length] = results[i-1];
+				ary[ary.length] = results[i];
+				ary[ary.length] = results[i+1];
+				ary[ary.length] = results[i+2];
+			}
+		}
+	}
+*/
+
+	ary = [ary0, ary1, ary2, ary3, ary4];
+>>>>>>> Stashed changes
 	makeHtml(ary);
 }
 
@@ -77,7 +145,12 @@ var makeHtml = function(results){
 //function makeHtml(results){
 	// $("#display").append("hoge");
 
+<<<<<<< Updated upstream
 	//for(var i=0; i < 5; i++){
+=======
+
+
+>>>>>>> Stashed changes
 	for(var i=0; i < results.length; i++){
 
 		//var entry = results[i];
@@ -86,14 +159,26 @@ var makeHtml = function(results){
 		//var region = entry.get("region");
 		//var sum_p = entry.get("sum_p");
 
+<<<<<<< Updated upstream
+=======
+
+>>>>>>> Stashed changes
 		var image = results[i][0];
 		var name = results[i][1];
 		var region = results[i][2];
 		var sum_p = results[i][3];
 
+<<<<<<< Updated upstream
 		var item = '<tr><th><img src="' + image + '"></th><th>' + name + '</th><th>' + region + '</th><th>' + sum_p + '</th></tr>';		
 		
 		$("#tbody").append(item);
+=======
+
+		if(name != null){
+			var item = '<tr><th><img src="' + image + '" width="50" height="50"></th><th>' + name + '</th><th>' + region + '</th><th>' + sum_p + '</th></tr>';
+			$("#tbody").append(item);
+		}
+>>>>>>> Stashed changes
 	}
 }
 

@@ -9,6 +9,54 @@
     <link rel="stylesheet" type="text/css" href="./css/style.css">
 </head>
 <body>
+<?php
+$connect = mysql_connect("localhost", "thanks", "thanksthanks");
+if(!$connect){
+	die("Cannot connect to MySQL");
+}
+
+if(!(mysql_select_db("thanks"))){
+    die("Cannot select the DB");
+}
+
+//$queryset = "SELECT id, name, take_p, give_p, sum_p, region FROM user";
+$queryset = "SELECT * FROM user ORDER BY sum_p DESC";
+
+$sendquery = mysql_query($queryset);
+if(!$sendquery){
+    die("Error in query");
+}
+
+echo "<table>";
+echo "<tr>";
+echo "<td>ID</td>";
+echo "<td>ユーザ名</td>";
+echo "<td>ありがとうした数</td>";
+echo "<td>ありがとうされた数</td>";
+echo "<td>これまでのありがとう</td>";
+echo "<td>地域</td>";
+echo "</tr>";
+
+while($row = mysql_fetch_array($sendquery)){
+	echo "<tr>";
+	echo "<td>" . $row['id'];
+	echo "</td>";
+    echo "<td>" . $row['name'];
+	echo "</td>";
+    echo "<td>" . $row['take_p'];
+	echo "</td>";
+    echo "<td>" . $row['give_p'];
+	echo "</td>";
+    echo "<td>" . $row['sum_p'];
+	echo "</td>";
+    echo "<td>" . $row['region'];
+	echo "</td>";
+	echo "</tr>";
+}
+echo "</table>";
+
+mysql_close($connect);
+?>
 
 	<!-- メニューバー -->
 	<div class="container">
@@ -59,7 +107,6 @@
           </tr>
         </thead>
         <tbody id="tbody"></tbody>
-        <div class="container" id="rank"></div>
       </table>
 	</div>
 
