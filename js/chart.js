@@ -1,4 +1,5 @@
 var chart;
+
 $(document).ready(function() {
     chart = new Highcharts.Chart({
         chart: {
@@ -9,7 +10,7 @@ $(document).ready(function() {
         title: { text: 'あなたのステータス' },
         subtitle: { text: '週間Thanks状況' },
         xAxis: [{
-            categories: ['1/18(土)', '1/19(日)', '1/20(月)', '1/21(火)', '1/22(水)', '1/23(木)', '1/24(金)'],
+            categories: ['1/18(土)', '1/19(日)', '1/20(月)', '1/21(火)', '1/22(水)', '1/23(木)', '1/24(金)']
             labels: {style: {fontSize: '12px'}}
         }],
         yAxis: [
@@ -65,21 +66,21 @@ $(document).ready(function() {
              color: '#FF8300',
              type: 'column',
              yAxis: 0,
-             data: [15, 4, 22, 10, 8, 20, 10],
+             data: [20,4,22,10,8,20,document.getElementById( 'take_p' ).title],
              stack: 'group1'
             },
             {name: 'ありがとうされた回数',
              color: '#FF0019',
              type: 'column',
              yAxis: 0,
-             data: [10, 15, 6, 8, 12, 14, 3],
+             data: [10, 15, 6, 8, 12, 14, document.getElementById( 'give_p' ).title],
              stack: 'group2'
             },
             {name: 'ありがとうした合計',
              type: 'spline',
              color: '#FF8300',
              yAxis: 1,
-             data: [15, 19, 41, 51, 59, 76, 86],
+             data: [15, 19, 41, 51, 59, 76, document.getElementById( 'sum_p' ).title],
              marker: { enabled: false },
              dashStyle: 'shortdot'                  
             },
