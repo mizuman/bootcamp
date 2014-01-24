@@ -1,6 +1,8 @@
 
 // とりあえず、画像を表示
 // 
+
+/*
 var showRanking = function(){
 
 	var mysql = require('mysql');
@@ -27,14 +29,13 @@ var showRanking = function(){
 	//var query = connection.query(sql, [userId]);
 	var query = connection.query(sql);
 
-/*
-	query.find({
-		success:function(results){
-			//makeHtml(results);
-			makeData(results);
-		}
-	});
-*/
+
+	//query.find({
+	//	success:function(results){
+	//		//makeHtml(results);
+	//		makeData(results);
+	//	}
+	//});
 
 	//エラー用
 	query.on('error', function(err) {
@@ -54,54 +55,45 @@ var showRanking = function(){
 	});
 		
 }
+*/
 
 
 //var makeData = function(results){
 var makeData = function(){
 //function makeData(){
 	//var username = Parse.User.current().get("username");
+	var username = "Keiko";
 
-	var ary0 = ['./img/Keiko_Kitagawa.jpg', 'Keiko', 'Hyogo', '100'];
-	var ary1 = ['./img/Tsubasa_Honda.jpg', 'Tsubasa', 'Tokyo', '75'];
-	var ary2 = ['./img/Miho_Tanaka.jpg', 'Miho', 'Tokyo', '50'];
-	var ary3 = ['./img/Reina_Triendl.jpg', 'Reina', 'Overseas', '25'];
-	var ary4 = ['./img/Dameo_Marude.jpg', 'Dameo', 'Tottori', '0'];
+	var ary0 = ['./img/Miho_Tanaka.jpg', 'Miho_Tanaka', 'Tokyo', '400000002'];
+	var ary1 = ['./img/Tsubasa_Honda.jpg', 'Tsubasa_Honda', 'Tokyo', '400000000'];
+	var ary2 = ['./img/Reina_Triendl.jpg', 'Reina_Triendl', 'Overseas', '200000004'];
+	var ary3 = ['./img/Keiko_Kitagawa.jpg', 'Keiko_Kitagawa', 'Hyogo', '200000000'];
+	var ary4 = ['./img/Dameo_Marude.jpg', 'Dameo_Marude', 'Tottori', '1002'];
+
+	var ary_temp = [ary0, ary1, ary2, ary3, ary4];
+
+	var ary = [];
 
 /*
 	if(results.length < 5){
 		for(var i=0; i < results.length; i++){
-			var ary_few = [];
-			ary_few[ary_few.length] = 
-
-		
+			ary[ary.length] = results[i];
+		}
 	}
 	else {
 		for(var i=0; i < results.length; i++){
 			if(results[i].get("name") = username){
-				ary0 = results[i-2];
-				ary1 = results[i-1];
-				ary2 = results[i];
-				ary3 = results[i+2];
-				ary4 = results[i+3];
+				ary[ary.length] = results[i-2];
+				ary[ary.length] = results[i-1];
+				ary[ary.length] = results[i];
+				ary[ary.length] = results[i+1];
+				ary[ary.length] = results[i+2];
 			}
 		}
 	}
 */
 
-/*
-	for(var i=0; i < results.length; i++){
-		if(results[i].get("name") = username){
-			ary0 = results[i-2];
-			ary1 = results[i-1];
-			ary2 = results[i];
-			ary3 = results[i+2];
-			ary4 = results[i+3];
-		}
-	}
-*/
-	
-
-	var ary = [ary0, ary1, ary2, ary3, ary4];
+	ary = [ary0, ary1, ary2, ary3, ary4];
 	makeHtml(ary);
 }
 
@@ -123,15 +115,16 @@ var makeHtml = function(results){
 		//var sum_p = entry.get("sum_p");
 
 
-
 		var image = results[i][0];
 		var name = results[i][1];
 		var region = results[i][2];
 		var sum_p = results[i][3];
 
-		var item = '<tr><th><img src="' + image + '" width="50" height="50"></th><th>' + name + '</th><th>' + region + '</th><th>' + sum_p + '</th></tr>';		
-		
-		$("#tbody").append(item);
+
+		if(name != null){
+			var item = '<tr><th><img src="' + image + '" width="50" height="50"></th><th>' + name + '</th><th>' + region + '</th><th>' + sum_p + '</th></tr>';
+			$("#tbody").append(item);
+		}
 	}
 }
 
