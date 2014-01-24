@@ -63,6 +63,7 @@ $(document).ready(function(){
 	}
 
 //comment:uidがdb上でユニークであること
+/*
 	var searchUser= function(uid){
 	     var query = new Parse.Query(Parse.User);
 	     query.equalTo("username", uid);
@@ -74,7 +75,7 @@ $(document).ready(function(){
 	       }
 	     });
 	}
-
+*/
 
 	
 
@@ -90,11 +91,12 @@ $(document).ready(function(){
 		userLogout();
 	})	
 
+/*parseDB検索用
 	$("#search_user" ).keypress(function(e) {
 	  if(e.which == 13){ // if enter is pressed
 	    var uid = $("#search_user").val();
 	    searchUser(uid);
 	  }
 	});
-
+*/
 })
