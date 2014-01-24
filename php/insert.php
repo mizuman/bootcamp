@@ -1,11 +1,3 @@
-<html>
-<head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-	<title>Thanks DB</title>
-    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="../css/style.css">
-</head>
-<body>
 <?php
 $connect = mysql_connect("localhost", "thanks", "thanksthanks");
 if(!$connect){
@@ -28,5 +20,3 @@ if(!$sendquery){
 
 mysql_close($connect);
 ?>
-</body>
-</html>
