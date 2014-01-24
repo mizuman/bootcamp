@@ -38,9 +38,44 @@
 	 	</div>
 	</div>
 
+	<!-- -->
+	<?php
+		$connect = mysql_connect("localhost", "thanks", "thanksthanks");
+		if(!$connect){
+			die("Cannot connect to MySQL");
+		}
+		if(!(mysql_select_db("thanks"))){
+    		die("Cannot select the DB");
+		}
+		$queryset = "SELECT id, name, take_p, give_p, sum_p, region FROM user";
+		$sendquery = mysql_query($queryset);
+		if(!$sendquery){
+    		die("Error in query");
+		}
+		$row = mysql_fetch_array($sendquery)
+		$row['name'];
+		$row['take_p'];
+		$row['give_p'];
+		$row['sum_p'];
+		$row['region'];
+		mysql_close($connect);
+		?>
+
+		echo "<div id="take_p" title=" + $row['take_p']" + />";
+		echo "<div id="give_p" title=" + $row['give_p']" + />";
+		echo "<div id="take_p" title=" + $row['sum_p']"  + />";
+	<!-- -->
+
+
 	<!-- 棒グラフの描画 -->
 	<div class="container" id="mygraph" style="height: 401px; margin: 0 auto"></div>
 
+<<<<<<< Updated upstream
+=======
+	<br>
+
+
+>>>>>>> Stashed changes
 
 	<br>
 
@@ -75,6 +110,7 @@
 	<!-- <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.js"></script> -->
 	<script type="text/javascript" src="./js/jquery-1.7.1.js"></script>
 	<script type="text/javascript" src="./js/highcharts.js"></script>
+	<script type="text/javascript" src="./js/highcharts-more.js"></script>
 	<script type="text/javascript" src="./js//modules/exporting.js"></script>
 	<script type="text/javascript" src="./js/chart.js"></script>
 
