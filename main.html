@@ -53,7 +53,7 @@
 		if(!$sendquery){
     		die("Error in query");
 		}
-		$row = mysql_fetch_array($sendquery)
+		$row = mysql_fetch_array($sendquery);
 		$row['name'];
 		$row['take_p'];
 		$row['give_p'];
@@ -61,9 +61,9 @@
 		$row['region'];
 		mysql_close($connect);
 		
-		echo "<div id="take_p" title=" . $row['take_p']  . "/>";
-		echo "<div id="give_p" title=" . $row['give_p']  . "/>";
-		echo "<div id="take_p" title=" . $row['sum_p']   . "/>";
+		echo '<div id="take_p" title=' . $row['take_p']  . '/>';
+		echo '<div id="give_p" title=' . $row['give_p']  . '/>';
+		echo '<div id="take_p" title=' . $row['sum_p']   . '/>';
 
 		?>
 
@@ -74,12 +74,7 @@
 	<!-- 棒グラフの描画 -->
 	<div class="container" id="mygraph" style="height: 401px; margin: 0 auto"></div>
 
-<<<<<<< Updated upstream
-=======
-	<br>
 
-
->>>>>>> Stashed changes
 
 	<div class="container" id="ranking">
 	<!-- 	ランキングの描画
