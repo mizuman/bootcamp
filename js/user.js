@@ -18,7 +18,7 @@ $(document).ready(function(){
 				//var post_data = $F('text');
 				$.ajax({
         			type: "POST",
-        			url: "./php/insert.php",
+        			url: "../php/insert.php",
         			data: 'data1=$("#username").val()&data2=$("#password").val()',
         			success: function() {
                 		alert('success');
